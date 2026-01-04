@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Painel Futurista</title>
+
+<style>
+body{
+  background:#000;
+  color:white;
+  font-family:Arial;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.panel{
+  width:360px;
+  padding:25px;
+  border-radius:18px;
+  background:#0a0a0a;
+  box-shadow:0 0 25px #ff00ff;
+}
+.option{
+  margin:12px 0;
+}
+label{
+  display:block;
+  margin-bottom:6px;
+}
+input[type=checkbox]{
+  accent-color:#ff00ff;
+}
+button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:#ff00ff;
+  color:white;
+  font-size:16px;
+}
+select{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:2px solid #ff00ff;
+  background:black;
+  color:white;
+}
+input[type=range]{
+  width:100%;
+  accent-color:#ff00ff;
+}
+.rangeVal{
+  color:#ff00ff;
+}
+.title{
+  font-size:20px;
+  margin-bottom:12px;
+  color:#ff00ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="panel">
+  <div class="title">Painel Futurista</div>
+
+  <div class="option">
+    <label><input id="aimbot" type="checkbox"> Ativar Aimbot (visual)</label>
+  </div>
+
+  <div class="option">
+    <label><input id="head" type="checkbox"> Injector Head Trick (visual)</label>
+  </div>
+
+  <div class="option">
+    <label><input id="prec" type="checkbox"> Aumentar precisão (simulação)</label>
+  </div>
+
+  <div class="option">
+    <label><input id="ignore" type="checkbox"> Ignorar alvos caídos</label>
+  </div>
+
+  <label>fov: <span id="val" class="rangeVal">97</span></label>
+  <input type="range" min="0" max="270" value="97" id="fov">
+
+  <div class="option">
+    <select id="target">
+      <option>Pescoço</option>
+      <option>Cabeça</option>
+      <option>Peito</option>
+    </select>
+  </div>
+
+  <button onclick="start()">INICIAR</button>
+</div>
+
+<script>
+let fov = document.getElementById("fov");
+let val = document.getElementById("val");
+
+fov.oninput = () => val.innerText = fov.value;
+
+function start(){
+  alert(
+    "Painel iniciado\n" +
+    "FOV: " + fov.value
+  );
+}
+</script>
+
+</body>
+</html>
